@@ -6,7 +6,7 @@ import { Movie } from '../typings'
 import requests from '../utils/requests'
 
 interface Props {
-  netflixOriginals: Movie[]
+  netflixOriginals: Movie[] // defines an array of the type
   trendingNow: Movie[]
   topRated: Movie[]
   actionMovies: Movie[]
@@ -38,7 +38,7 @@ export default function Home({
       {/* banner goes here */}
       <main>
         <section>
-          <Banner />
+          <Banner netflixOriginals={netflixOriginals} />
           {/* rows go here */}
           {/* rows go here */}
           {/* rows go here */}
