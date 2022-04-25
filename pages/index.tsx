@@ -56,6 +56,8 @@ export default function Home({
 export const getServerSideProps = async () => {
   // @todo feat: add basic custom fetch client that returns data in json format
   // @todo refactor: map through requests object and then fetch
+
+  // todo feat: move fetch logic to api route
   const [
     netflixOriginals,
     trendingNow,
