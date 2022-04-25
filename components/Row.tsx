@@ -34,7 +34,9 @@ export function Row({ title, movies }: Props) {
       </h2>
       <div className="group relative md:-ml-2">
         <ChevronLeftIcon
-          className="absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer transition hover:scale-125 group-hover:opacity-100"
+          className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer transition hover:scale-125 group-hover:opacity-100 ${
+            !isMoved && 'hidden'
+          }`}
           // @todo refactor: store click argument as local constant string type
           // example: clicked: {left :'left' } or something
           onClick={() => handleClick('left')}
