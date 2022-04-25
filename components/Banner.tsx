@@ -10,7 +10,7 @@ interface Props {
   netflixOriginals: Movie[]
 }
 
-export const Banner = ({ netflixOriginals }: Props) => {
+export function Banner({ netflixOriginals }: Props) {
   // useState is a generic function that passed a type before calling it
   // less then symbol will declare what type we will use then close
   const [movie, setMovie] = useState<Movie | null>(null)
