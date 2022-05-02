@@ -10,14 +10,20 @@ interface Inputs {
 
 export default function Login() {
   const [login, setLogin] = useState<boolean>(false)
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>()
 
-  const onSubmit = (data: Inputs) => console.log(data)
+  const onSubmit = async ({ email, password }: Inputs) => {
+    console.log({ email, password })
+    if (login) {
+      // await signIn(email, password)
+    } else {
+      // await signUp(email, password)
+    }
+  }
 
   return (
     <div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
@@ -52,7 +58,11 @@ export default function Login() {
               className="input"
               {...register('email', { required: true })}
             />
-            {errors.email && <span>This field is required</span>}
+            {errors.email && (
+              <p className="p-1 text-[13px] font-light  text-orange-500">
+                Please enter a valid email.
+              </p>
+            )}
           </label>
           <label className="inline-block w-full">
             <input
@@ -61,7 +71,11 @@ export default function Login() {
               className="input"
               {...register('password', { required: true })}
             />
-            {errors.password && <span>This field is required</span>}
+            {errors.password && (
+              <p className="p-1 text-[13px] font-light  text-orange-500">
+                Your password must contain between 4 and 60 characters.
+              </p>
+            )}
           </label>
         </div>
 
