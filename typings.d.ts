@@ -23,7 +23,6 @@ export interface Movie {
 }
 
 export interface Element {
-  // has type key that can be any of the following
   type:
     | 'Bloopers'
     | 'Featurette'
