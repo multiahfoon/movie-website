@@ -68,6 +68,7 @@ export function Modal() {
 
         <div className="relative pt-[56.25%]">
           <ReactPlayer
+            // @todo: add fallback if no trailer found
             url={`https://www.youtube.com/watch?v=${trailer}`}
             width="100%"
             height="100%"
