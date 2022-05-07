@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import MuiModal from '@mui/material/Modal'
+import ReactPlayer from 'react-player'
 
 import { Element, Genre } from '../typings'
 import { modalState, movieState } from '../atoms/modalAtom'
@@ -11,6 +12,7 @@ export function Modal() {
   const [movie, setMovie] = useRecoilState(movieState)
   const [showModal, setShowModal] = useRecoilState(modalState)
   const [trailer, setTrailer] = useState<string | null>('')
+  const [muted, setMuted] = useState(true)
 
   useEffect(() => {
     if (!movie) return
@@ -52,6 +54,16 @@ export function Modal() {
         >
           <XIcon className="h-6 w-6" />
         </button>
+        <div>
+          <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${trailer}`}
+            width="100%"
+            height="100%"
+            style={{ position: 'absolute', top: '0', left: '0' }}
+            playing
+            muted={muted}
+          />
+        </div>
       </>
     </MuiModal>
   )
