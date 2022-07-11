@@ -5,7 +5,6 @@ import { Banner } from '../components/Banner'
 import { Header } from '../components/Header'
 import { Modal } from '../components/Modal'
 import { Row } from '../components/Row'
-import { useAuth } from '../hooks/useAuth'
 import { Movie } from '../typings'
 import requests from '../utils/requests'
 
@@ -30,12 +29,7 @@ export default function Home({
   topRated,
   trendingNow,
 }: Props) {
-  const { logout, loading } = useAuth()
-
   const showModal = useRecoilValue(modalState)
-
-  // @todo feat: add loader
-  if (loading) return null
 
   return (
     <div
