@@ -8,4 +8,7 @@ This application uses the TMDb API but is not endorsed or certified by TMDb.
 - React
 - Nextjs
 - Nodejs
+- Firebase
 - TheMovieDataBase API
+
+[Project Demo](https://movie-website-tan.vercel.app)
