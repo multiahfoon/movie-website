@@ -52,7 +52,7 @@ export function Modal() {
     setShowModal(false)
   }
 
-  return (
+  return movie ? (
     <MuiModal
       open={showModal}
       onClose={handleClose}
@@ -142,5 +142,5 @@ export function Modal() {
         </div>
       </>
     </MuiModal>
-  )
+  ) : null
 }
