@@ -6,6 +6,7 @@ This application uses the TMDb API but is not endorsed or certified by TMDb.
 
 - TypeScript
 - React
+- Recoil
 - Nextjs
 - Nodejs
 - Firebase
