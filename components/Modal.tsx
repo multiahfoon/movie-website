@@ -106,7 +106,7 @@ export function Modal() {
           <div className="space-y-6 text-lg">
             <div className="flex items-center space-x-2 text-sm">
               <p className="font-semibold text-green-400">
-                {movie?.vote_average * 100} % Match
+                {Math.round(movie?.vote_average * 100) / 100} ★ Rating
               </p>
               <p className="font-light">
                 {movie?.release_date || movie?.first_air_date}
