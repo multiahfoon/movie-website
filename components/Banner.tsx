@@ -28,9 +28,10 @@ export function Banner({ netflixOriginals }: Props) {
       {/* swap out w-screen and vw for percent due to width overflow */}
       <div className="absolute top-0 left-0 -z-10 h-[95vh] w-[100%]">
         <Image
-          layout="fill"
           src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
-          objectFit="cover"
+          alt={movie?.title ?? movie?.name ?? 'Movie backdrop'}
+          className="object-cover"
+          fill
         />
       </div>
 
